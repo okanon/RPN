@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-rpn = "1 3 + 9 2 - *"  # (1 + 3) * (9 - 2)
+rpn = "1 3 + 9 2 - * 5 9 + /"
+# (1 + 3) * (9 - 2) / (5 + 9) = 4 * 7 * 13 = 28 / 14 = 2.0
 
 
 def RPN(states):
@@ -9,7 +10,8 @@ def RPN(states):
         "+": (lambda x, y: x + y),
         '-': (lambda x, y: x - y),
         '*': (lambda x, y: x * y),
-        '/': (lambda x, y: float(x) / y)
+        '/': (lambda x, y: float(x) / y),
+        '%': (lambda x, y: float(x) / y)
     }
 
     stack = []
